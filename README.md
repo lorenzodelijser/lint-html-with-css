@@ -1,5 +1,5 @@
 # Lint HTML with CSS
-A CSS file composed with the CSS snippets from the hashtag (https://twitter.com/search?q=%23lintHTMLwithCSS)[#lintHTMLwithCSS] on Twitter.
+A CSS file composed with the CSS snippets from the hashtag [#lintHTMLwithCSS](https://twitter.com/search?q=%23lintHTMLwithCSS) on Twitter.
 
 This css file contains code written by:
 

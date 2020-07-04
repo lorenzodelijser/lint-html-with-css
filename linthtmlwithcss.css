@@ -221,3 +221,15 @@ fieldset > :first-child:noet(legend)::before {
 :is(b,i,q,em,abbr,cite,code,span,small,label,strong) > div {
     outline: var(--lint);
 }
+
+
+/* No headings inside inline <a> tag */
+/* By Tanisha Sabherwal */
+a h1,
+a h2,
+a h3,
+a h4,
+a h5,
+a h6{
+  outline: var(--lint);
+}

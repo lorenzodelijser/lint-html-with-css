@@ -9,7 +9,7 @@
 /* By Geoffrey Crofte */
 
 input:not([id], label:not([for])) {
-    border: var(--lint);
+    outline: var(--lint);
 }
 
 
@@ -21,7 +21,7 @@ input:not([id], label:not([for])) {
 /* By Adam Argyle */
 
 a:is(:not([href]), [href=""], [href="#"]) {
-    border: var(--lint);
+    outline: var(--lint);
 }
 
 
@@ -30,7 +30,7 @@ a:is(:not([href]), [href=""], [href="#"]) {
 /* By Geoffrey Crofte */
 
 img:not([alt]) {
-    border: var(--lint);
+    outline: var(--lint);
 }
 
 
@@ -43,7 +43,7 @@ img:not([alt]) {
 :not(tr) > :is(td, th),
 :not(select) > :is(option, optgroup),
 :not(table) > :is(thead, tfoot, tbody, tr, colgroup, caption) {
-    border: var(--lint);
+    outline: var(--lint);
 }
 
 
@@ -52,14 +52,14 @@ img:not([alt]) {
 /* By Adam Argyle */
 
 :is(ul, ol) *:not(li) {
-    border: var(--lint);
+    outline: var(--lint);
 }
 
 /* Prevent page load jank and CLS by finding <img>'s missing height and width attributes */
 /* By Adam Argyle */
 
 img:not([width]):not([height]) {
-    border: var(--lint);
+    outline: var(--lint);
 }
 
 /* this selector hunts for elements with a tabindex other than 0 or -1 */
@@ -67,7 +67,7 @@ img:not([width]):not([height]) {
 /* By Adam Argyle */
 
 [tabindex]:not([tabindex="0"], [tabindex="-1"]) {
-    border: var(--lint);
+    outline: var(--lint);
 }
 
 
@@ -76,7 +76,7 @@ img:not([width]):not([height]) {
 /* By Adam Argyle */
 
 button:not([type]) {
-    border: var(--lint);
+    outline: var(--lint);
 }
 
 
@@ -89,7 +89,7 @@ input:not([type="button"])
 :not([arialabelledby],[id]),
 textarea:not([aria-labelledby],[id])
 label:not([for]) {
-    border: var(--lint);
+    outline: var(--lint);
 }
 
 
@@ -100,7 +100,7 @@ input[type=button]:not([aria-label]),
 input[type=reset]:not([aria-label]),
 input[type=submit]:not([aria-label]),
 button:not([aria-label]) {
-    border: var(--lint);
+    outline: var(--lint);
 }
 
 
@@ -109,7 +109,7 @@ button:not([aria-label]) {
 /* By Quentin Bellanger */
 
 table > *:first-child:not(caption) {
-    border: var(--lint);
+    outline: var(--lint);
 }
 
 
@@ -131,7 +131,7 @@ h6 ~ h3:first-of-type,
 h5 ~ h4:first-of-type,
 h6 ~ h4:first-of-type,
 h6 ~ h5:first-of-type {
-    border: var(--lint);
+    outline: var(--lint);
 }
 
 
@@ -139,7 +139,7 @@ h6 ~ h5:first-of-type {
 /* By Jay Holtslander */
 
 picture > source:first-child:not([type="image/webp"]):before {
-    border: var(--lint);
+    outline: var(--lint);
 }
 
 /* <img> and <iframe>'s without native lazy loading */
@@ -147,21 +147,21 @@ picture > source:first-child:not([type="image/webp"]):before {
 
 img:not([loading="lazy"]),
 iframe:not([loading="lazy"]) {
-    border: var(--lint);
+    outline: var(--lint);
 }
 
 /* Prevents the absence of lang attribute */
 /* By Geoffry Crofte */
 
 html:not([lang])::before {
-    border: var(--lint);
+    outline: var(--lint);
 }
 
 /* SVG without focusable=false when decorative or hidden */
 /* By Geoffry Crofte */
 
 svg:is([role="presentation"], [aria-label], [aria-labelledby], [aria-hidden="true"]):not([focusable="false"]) {
-    border: var(--lint);
+    outline: var(--lint);
 }
 
 
@@ -171,7 +171,7 @@ svg:is([role="presentation"], [aria-label], [aria-labelledby], [aria-hidden="tru
 [dir="rtl"]:not([lang="ar"], [lang="he"]),
 :is([lang="ar"], [lang="he"]):noet([dir="rtl"]),
 :is([lang="ar"], [lang="he"]) [lang]:not([dir="ltr"]) {
-    border: var(--lint);
+    outline: var(--lint);
 }
 
 
@@ -179,7 +179,7 @@ svg:is([role="presentation"], [aria-label], [aria-labelledby], [aria-hidden="tru
 /* By Geoffrey Crofte */
 
 svg:not([role="presentation"]):not([aria-label]):not([aria-labelledby]) > :first-child:not(title) {
-    border: var(--lint);
+    outline: var(--lint);
 }
 
 
@@ -191,7 +191,7 @@ svg:not([role="presentation"]):not([aria-label]):not([aria-labelledby]) > :first
     [rel*="noopener"],
     [rel*="noreferrer"]
 ) {
-    border: var(--lint);
+    outline: var(--lint);
 }
 
 
@@ -200,7 +200,7 @@ svg:not([role="presentation"]):not([aria-label]):not([aria-labelledby]) > :first
 
 details > summary:not(:first-child),
 details > *:first-child:not(summary) {
-    border: var(--lint);
+    outline: var(--lint);
 }
 
 
@@ -210,7 +210,7 @@ details > *:first-child:not(summary) {
 fieldset > :first-child:noet(legend)::before {
     content: 'add a <legend> first, please';
     display: block;
-    border: var(--lint);
+    outline: var(--lint);
 }
 
 
@@ -218,7 +218,7 @@ fieldset > :first-child:noet(legend)::before {
 /* By Adam Argyle */
 
 :is(b,i,q,em,abbr,cite,code,span,small,label,strong) > div {
-    border: var(--lint);
+    outline: var(--lint);
 }
 
 
@@ -231,7 +231,7 @@ a h3,
 a h4,
 a h5,
 a h6 {
-    border: var(--lint);
+    outline: var(--lint);
 }
 
 
@@ -240,7 +240,7 @@ a h6 {
 
 img:not([width]),
 img:not([height]) {
-    border: var(--lint);
+    outline: var(--lint);
 }
 
 
@@ -249,7 +249,7 @@ img:not([height]) {
 
 embed:not([width]),
 iframe:not([height]) {
-    border: var(--lint);
+    outline: var(--lint);
 }
 
 
@@ -257,5 +257,5 @@ iframe:not([height]) {
 /* By Jay Holtslander */
 
 img:not([srcset]) {
-    border: var(--lint);
+    outline: var(--lint);
 }

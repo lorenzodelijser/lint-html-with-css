@@ -1,5 +1,8 @@
-# Lint HTML with CSS
-A CSS file composed with the CSS snippets from the hashtag [#lintHTMLwithCSS](https://twitter.com/search?q=%23lintHTMLwithCSS) on Twitter.
+# 🧪 Lint HTML with CSS
+
+![Lint HTML with CSS](https://repository-images.githubusercontent.com/277086414/dff26d00-bdf7-11ea-9945-604b96aa0899 "Lint HTML with CSS Cover Image")
+
+A collection of CSS snippets from the hashtag [#lintHTMLwithCSS](https://twitter.com/search?q=%23lintHTMLwithCSS) on Twitter. These CSS snippets intend to warn developers about common mistakes made in HTML.
 
 This css file contains code written by:
 

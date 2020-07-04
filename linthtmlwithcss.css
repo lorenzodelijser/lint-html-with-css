@@ -1,0 +1,223 @@
+/* lintHTMLwithCSS */
+
+:root {
+    --lint: outline: 2px dotted red;;
+}
+
+/* Debug inputs and lebels without id or for attribute */
+/* Are you sure your code is ok? Explicit relation between an input and its label is always better. Use id and for attributes to do so. */
+/* By Geoffrey Crofte */
+
+input:not([id], label:not([for])) {
+    outline: var(--lint);
+}
+
+
+/* Links go nowhere? */
+/* This selector hunts for links that have:
+- No href
+- an empty href
+- a "#" href (button parhaps?) */
+/* By Adam Argyle */
+
+a:is(:not([href]), [href=""], [href="#"]) {
+    outline: var(--lint);
+}
+
+
+/* Image without alt attribute? */
+/* Debug images without alt attribute with CSS. */
+/* By Geoffrey Crofte */
+
+img:not([alt]) {
+    outline: var(--lint);
+}
+
+
+/* This selector hunts for forbidden nesting */
+/* By Adam Argyle */
+
+:not(figure) > figcaption,
+:not(fieldset) > legend,
+:not(dl) > :is(dt, dd),
+:not(tr) > :is(td, th),
+:not(select) > :is(option, optgroup),
+:not(table) > :is(thead, tfoot, tbody, tr, colgroup, caption) {
+    outline: var(--lint);
+}
+
+
+/* Only <li>'s allowed here! */
+/* This selector hunts for lists that have something other than an <li> inside */
+/* By Adam Argyle */
+
+:is(ul, ol) *:not(li) {
+    outline: var(--lint);
+}
+
+/* Prevent page load jank and CLS by finding <img>'s missing height and width attributes */
+/* By Adam Argyle */
+
+img:not([width]):not([height]) {
+    outline: var(--lint);
+}
+
+/* this selector hunts for elements with a tabindex other than 0 or -1 */
+/* values other than 0 or -1 can steal or disrupt natural tab order and is generally something to avoid */
+/* By Adam Argyle */
+
+[tabindex]:not([tabindex="0"], [tabindex="-1"]) {
+    outline: var(--lint);
+}
+
+
+/* Debugs buttons without type attribute, with CSS */
+/* Non-explicit type leads to button being a submit button. Not all buttons are submit buttons. A neutral type would be type="button" */
+/* By Adam Argyle */
+
+button:not([type]) {
+    outline: var(--lint);
+}
+
+
+/* Find all the input fields without any labelling */
+/* By Tanisha Sabherwal */
+
+input:not([type="button"])
+:not([type="reset"])
+:not([type="submit"])
+:not([arialabelledby],[id]),
+textarea:not([aria-labelledby],[id])
+label:not([for]) {
+    outline: var(--lint);
+}
+
+
+/* Find all the buttons without any label */
+/* By Tanisha Sabherwal */
+
+input[type=button]:not([aria-label]),
+input[type=reset]:not([aria-label]),
+input[type=submit]:not([aria-label]),
+button:not([aria-label]) {
+    outline: var(--lint);
+}
+
+
+/* Tables should have a caption */
+/* This one is useful to force each <caption> to be the first direct child of a <table> elements. */
+/* By Quentin Bellanger */
+
+table > *:first-child:not(caption) {
+    outline: var(--lint);
+}
+
+
+/* Headers out of order (i.e. h2 before h1, etc.) */
+/* By Una Kravets */
+
+h2 ~ h1,
+h3 ~ h1,
+h4 ~ h1,
+h5 ~ h1,
+h6 ~ h1,
+h3 ~ h2:first-of-type,
+h4 ~ h2:first-of-type,
+h5 ~ h2:first-of-type,
+h6 ~ h2:first-of-type,
+h4 ~ h3:first-of-type,
+h5 ~ h3:first-of-type,
+h6 ~ h3:first-of-type,
+h5 ~ h4:first-of-type,
+h6 ~ h4:first-of-type,
+h6 ~ h5:first-of-type {
+    outline: var(--lint);
+}
+
+
+/* Find <picture> elements that don't contain a webp <source> */
+/* By Jay Holtslander */
+
+picture > source:first-child:not([type="image/webp"]):before {
+    outline: var(--lint);
+}
+
+
+/* <img> and <iframe>'s without native lazy loading */
+/* By Jay Holtslander */
+
+img:not([loading="lazy"]),iframe:not([loading="lazy"]) {
+    outline: var(--lint);
+}
+
+
+/* Prevents the absence of lang attribute */
+/* By Geoffry Crofte */
+
+html:not([lang])::before {
+    outline: var(--lint);
+}
+
+/* SVG without focusable=false when decorative or hidden */
+/* By Geoffry Crofte */
+
+svg:is([role="presentation"], [aria-label], [aria-labelledby], [aria-hidden="true"]):not([focusable="false"]) {
+    outline: var(--lint);
+}
+
+
+/* Mismatched [dir] && [lang] */
+/* By Adam Argyle */
+
+[dir="rtl"]:not([lang="ar"], [lang="he"]),
+:is([lang="ar"], [lang="he"]):noet([dir="rtl"]),
+:is([lang="ar"], [lang="he"]) [lang]:not([dir="ltr"]) {
+    outline: var(--lint);
+}
+
+
+/* SVG without title or aria-label and not considered as decorative */
+/* By Geoffrey Crofte */
+
+svg:not([role="presentation"]):not([aria-label]):not([aria-labelledby]) > :first-child:not(title) {
+    outline: var(--lint);
+}
+
+
+/* Unsecure [target=blank] */
+/* By Adam Argyle */
+
+[target$="blank"]:not(
+    [rel],
+    [rel*="noopener"],
+    [rel*="noreferrer"]
+) {
+    outline: var(--lint);
+}
+
+
+/* Summary must be the first child */
+/* By Adam Argyle */
+
+details > summary:not(:first-child),
+details > *:first-child:not(summary) {
+    outline: var(--lint);
+}
+
+
+/* Fieldset where legend isn't the first child */
+/* By Geoffrey Crofte */
+
+fieldset > :first-child:noet(legend)::before {
+    content: 'add a <legend> first, please';
+    display: block;
+    color: var(--lint);
+}
+
+
+/* No divs inside inline elements */
+/* By Adam Argyle */
+
+:is(b,i,q,em,abbr,cite,code,span,small,label,strong) > div {
+    outline: var(--lint);
+}

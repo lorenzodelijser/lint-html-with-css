@@ -222,6 +222,19 @@ fieldset > :first-child:noet(legend)::before {
 }
 
 
+/* No headings inside inline <a> tag */
+/* By Tanisha Sabherwal */
+
+a h1,
+a h2,
+a h3,
+a h4,
+a h5,
+a h6 {
+    border: var(--lint);
+}
+
+
 /* <img> without height and width that will cause cumulative layout shift. See: https://web.dev/optimize-cls/#images-without-dimensions */
 /* By Jay Holtslander */
 

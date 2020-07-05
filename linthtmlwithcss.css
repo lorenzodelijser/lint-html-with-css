@@ -259,3 +259,13 @@ iframe:not([height]) {
 img:not([srcset]) {
     outline: var(--lint);
 }
+
+
+/* Empty buttons or links without any kind of labelling */
+/* By Geoffrey Crofte */
+
+:is(button, a):empty:not([aria-label]):not([aria-labelledby]),
+:is(button, a):not([aria-label]):not([aria-labelledby]) img:only-child:is(:not([alt]),[alt=""]),
+:is(button, a):not([aria-label]):not([aria-labelledby]) i:only-child:not([aria-label]):not([aria-labelledby]) {
+    outline: var(--lint);
+}

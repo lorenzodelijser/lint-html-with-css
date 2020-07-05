@@ -10,6 +10,7 @@
 
 input:not([id], label:not([for])) {
     outline: var(--lint);
+    content: "Debug inputs and lebels without id or for attribute";
 }
 
 
@@ -22,6 +23,7 @@ input:not([id], label:not([for])) {
 
 a:is(:not([href]), [href=""], [href="#"]) {
     outline: var(--lint);
+    content: "This selector hunts for links that have No href, an empty href and a '#' href";
 }
 
 
@@ -31,6 +33,7 @@ a:is(:not([href]), [href=""], [href="#"]) {
 
 img:not([alt]) {
     outline: var(--lint);
+    content: "Debug images without alt attribute with CSS.";
 }
 
 
@@ -44,6 +47,7 @@ img:not([alt]) {
 :not(select) > :is(option, optgroup),
 :not(table) > :is(thead, tfoot, tbody, tr, colgroup, caption) {
     outline: var(--lint);
+    content: "This selector hunts for forbidden nesting";
 }
 
 
@@ -53,6 +57,7 @@ img:not([alt]) {
 
 :is(ul, ol) *:not(li) {
     outline: var(--lint);
+    content: "This selector hunts for lists that have something other than an <li> inside";
 }
 
 /* Prevent page load jank and CLS by finding <img>'s missing height and width attributes */
@@ -60,6 +65,7 @@ img:not([alt]) {
 
 img:not([width]):not([height]) {
     outline: var(--lint);
+    content: "Prevent page load jank and CLS by finding <img>'s missing height and width attributes";
 }
 
 /* this selector hunts for elements with a tabindex other than 0 or -1 */
@@ -68,6 +74,7 @@ img:not([width]):not([height]) {
 
 [tabindex]:not([tabindex="0"], [tabindex="-1"]) {
     outline: var(--lint);
+    content: "This selector hunts for elements with a tabindex other than 0 or -1";
 }
 
 
@@ -77,6 +84,7 @@ img:not([width]):not([height]) {
 
 button:not([type]) {
     outline: var(--lint);
+    content: "Debugs buttons without type attribute";
 }
 
 
@@ -90,6 +98,7 @@ input:not([type="button"])
 textarea:not([aria-labelledby],[id])
 label:not([for]) {
     outline: var(--lint);
+    content: "Find all the input fields without any labelling";
 }
 
 
@@ -101,6 +110,7 @@ input[type=reset]:not([aria-label]),
 input[type=submit]:not([aria-label]),
 button:not([aria-label]) {
     outline: var(--lint);
+    content: "Find all the buttons without any label";
 }
 
 
@@ -110,6 +120,7 @@ button:not([aria-label]) {
 
 table > *:first-child:not(caption) {
     outline: var(--lint);
+    content: "Tables should have a caption";
 }
 
 
@@ -132,6 +143,7 @@ h5 ~ h4:first-of-type,
 h6 ~ h4:first-of-type,
 h6 ~ h5:first-of-type {
     outline: var(--lint);
+    content: "Headers out of order (i.e. h2 before h1, etc.)";
 }
 
 
@@ -140,6 +152,7 @@ h6 ~ h5:first-of-type {
 
 picture > source:first-child:not([type="image/webp"]):before {
     outline: var(--lint);
+    content: "Find <picture> elements that don't contain a webp <source>";
 }
 
 /* <img> and <iframe>'s without native lazy loading */
@@ -148,6 +161,7 @@ picture > source:first-child:not([type="image/webp"]):before {
 img:not([loading="lazy"]),
 iframe:not([loading="lazy"]) {
     outline: var(--lint);
+    content: "<img> and <iframe>'s without native lazy loading";
 }
 
 /* Prevents the absence of lang attribute */
@@ -155,6 +169,7 @@ iframe:not([loading="lazy"]) {
 
 html:not([lang])::before {
     outline: var(--lint);
+    content: "Prevents the absence of lang attribute";
 }
 
 /* SVG without focusable=false when decorative or hidden */
@@ -162,6 +177,7 @@ html:not([lang])::before {
 
 svg:is([role="presentation"], [aria-label], [aria-labelledby], [aria-hidden="true"]):not([focusable="false"]) {
     outline: var(--lint);
+    content: "SVG without focusable=false when decorative or hidden";
 }
 
 
@@ -172,6 +188,7 @@ svg:is([role="presentation"], [aria-label], [aria-labelledby], [aria-hidden="tru
 :is([lang="ar"], [lang="he"]):noet([dir="rtl"]),
 :is([lang="ar"], [lang="he"]) [lang]:not([dir="ltr"]) {
     outline: var(--lint);
+    content: "Mismatched [dir] && [lang]";
 }
 
 
@@ -180,6 +197,7 @@ svg:is([role="presentation"], [aria-label], [aria-labelledby], [aria-hidden="tru
 
 svg:not([role="presentation"]):not([aria-label]):not([aria-labelledby]) > :first-child:not(title) {
     outline: var(--lint);
+    content: "SVG without title or aria-label and not considered as decorative";
 }
 
 
@@ -192,6 +210,7 @@ svg:not([role="presentation"]):not([aria-label]):not([aria-labelledby]) > :first
     [rel*="noreferrer"]
 ) {
     outline: var(--lint);
+    content: "Unsecure [target=blank]";
 }
 
 
@@ -201,16 +220,16 @@ svg:not([role="presentation"]):not([aria-label]):not([aria-labelledby]) > :first
 details > summary:not(:first-child),
 details > *:first-child:not(summary) {
     outline: var(--lint);
+    content: "Summary must be the first child";
 }
 
 
 /* Fieldset where legend isn't the first child */
 /* By Geoffrey Crofte */
 
-fieldset > :first-child:noet(legend)::before {
-    content: 'add a <legend> first, please';
-    display: block;
+fieldset > :first-child:not(legend)::before {
     outline: var(--lint);
+    content: 'add a <legend> first, please';
 }
 
 
@@ -219,6 +238,7 @@ fieldset > :first-child:noet(legend)::before {
 
 :is(b,i,q,em,abbr,cite,code,span,small,label,strong) > div {
     outline: var(--lint);
+    content: "No divs inside inline elements";
 }
 
 
@@ -232,6 +252,7 @@ a h4,
 a h5,
 a h6 {
     outline: var(--lint);
+    content: "No headings inside inline <a> tag";
 }
 
 
@@ -241,6 +262,7 @@ a h6 {
 img:not([width]),
 img:not([height]) {
     outline: var(--lint);
+    content: "<img> without height and width that will cause cumulative layout shift. See: https://web.dev/optimize-cls/#images-without-dimensions";
 }
 
 
@@ -250,6 +272,7 @@ img:not([height]) {
 embed:not([width]),
 iframe:not([height]) {
     outline: var(--lint);
+    content: "<embeds> or <iframes> without height and width that will cause cumulative layout shift. See: https://web.dev/optimize-cls/#ads-embeds-and-iframes-without-dimensions";
 }
 
 
@@ -258,6 +281,7 @@ iframe:not([height]) {
 
 img:not([srcset]) {
     outline: var(--lint);
+    content: "Not utilizing srcset for responsive images. See: https://html.com/attributes/img-srcset/";
 }
 
 
@@ -268,4 +292,5 @@ img:not([srcset]) {
 :is(button, a):not([aria-label]):not([aria-labelledby]) img:only-child:is(:not([alt]),[alt=""]),
 :is(button, a):not([aria-label]):not([aria-labelledby]) i:only-child:not([aria-label]):not([aria-labelledby]) {
     outline: var(--lint);
+    content: "Empty buttons or links without any kind of labelling";
 }

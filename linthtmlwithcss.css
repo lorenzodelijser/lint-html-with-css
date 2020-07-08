@@ -294,3 +294,12 @@ img:not([srcset]) {
     outline: var(--lint);
     content: "Empty buttons or links without any kind of labelling";
 }
+
+
+/* Prevent unsecure [target='_blank'] links */
+/* By Victor de la Fouchardière */
+
+a[target='_blank']:not([rel ='noopener']):not([rel='noreferrer']) {
+    outline: var(--lint);
+    content: "Prevent unsecure [target='_blank'] links";
+}

@@ -6,14 +6,15 @@ A collection of CSS snippets from the hashtag [#lintHTMLwithCSS](https://twitter
 
 This css file contains code written by:
 
-| Name              | Twitter                            |
-| ----------------- | ---------------------------------- |
-| Adam Argyle       | https://twitter.com/argyleink      |
-| Geoffrey Crofte   | https://twitter.com/geoffreycrofte |
-| Tanisha Sabherwal | https://twitter.com/tanishaaa03    |
-| Quentin Bellanger | https://twitter.com/bellanger_q    |
-| Una Kravets       | https://twitter.com/Una            |
-| Jay Holtslander   | https://twitter.com/j_holtslander  |
+| Name                      | Twitter                            |
+| ------------------------- | ---------------------------------- |
+| Adam Argyle               | https://twitter.com/argyleink      |
+| Geoffrey Crofte           | https://twitter.com/geoffreycrofte |
+| Tanisha Sabherwal         | https://twitter.com/tanishaaa03    |
+| Quentin Bellanger         | https://twitter.com/bellanger_q    |
+| Una Kravets               | https://twitter.com/Una            |
+| Jay Holtslander           | https://twitter.com/j_holtslander  |
+| Victor de la Fouchardière | https://twitter.com/TrustedSheriff |
 
 Amazing repo's in this topic that are worth checking:
 

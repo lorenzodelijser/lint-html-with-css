@@ -60,13 +60,6 @@ img:not([alt]) {
     content: "This selector hunts for lists that have something other than an <li> inside";
 }
 
-/* Prevent page load jank and CLS by finding <img>'s missing height and width attributes */
-/* By Adam Argyle */
-
-img:not([width]):not([height]) {
-    outline: var(--lint);
-    content: "Prevent page load jank and CLS by finding <img>'s missing height and width attributes";
-}
 
 /* this selector hunts for elements with a tabindex other than 0 or -1 */
 /* values other than 0 or -1 can steal or disrupt natural tab order and is generally something to avoid */

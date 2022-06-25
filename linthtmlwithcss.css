@@ -4,13 +4,13 @@
     --lint: 2px dashed red;
 }
 
-/* Debug inputs and lebels without id or for attribute */
+/* Debug inputs and labels without id or for attribute */
 /* Are you sure your code is ok? Explicit relation between an input and its label is always better. Use id and for attributes to do so. */
 /* By Geoffrey Crofte */
 
 input:not([id], label:not([for])) {
     outline: var(--lint);
-    content: "Debug inputs and lebels without id or for attribute";
+    content: "Debug inputs and labels without id or for attribute";
 }
 
 
@@ -18,7 +18,7 @@ input:not([id], label:not([for])) {
 /* This selector hunts for links that have:
 - No href
 - an empty href
-- a "#" href (button parhaps?) */
+- a "#" href (button perhaps?) */
 /* By Adam Argyle */
 
 a:is(:not([href]), [href=""], [href="#"]) {
@@ -147,12 +147,12 @@ h6 ~ h5:first-of-type {
 }
 
 
-/* Find <picture> elements that don't contain a webp <source> */
+/* Find <picture> elements that don't contain a WebP <source> */
 /* By Jay Holtslander */
 
 picture > source:first-child:not([type="image/webp"]):before {
     outline: var(--lint);
-    content: "Find <picture> elements that don't contain a webp <source>";
+    content: "Find <picture> elements that don't contain a WebP <source>";
 }
 
 /* <img> and <iframe>'s without native lazy loading */
@@ -165,7 +165,7 @@ iframe:not([loading="lazy"]) {
 }
 
 /* Prevents the absence of lang attribute */
-/* By Geoffry Crofte */
+/* By Geoffrey Crofte */
 
 html:not([lang])::before {
     outline: var(--lint);
@@ -173,7 +173,7 @@ html:not([lang])::before {
 }
 
 /* SVG without focusable=false when decorative or hidden */
-/* By Geoffry Crofte */
+/* By Geoffrey Crofte */
 
 svg:is([role="presentation"], [aria-label], [aria-labelledby], [aria-hidden="true"]):not([focusable="false"]) {
     outline: var(--lint);

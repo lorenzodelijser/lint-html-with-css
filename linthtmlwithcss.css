@@ -94,7 +94,7 @@ button:not([type]) {
 input:not([type="button"])
 :not([type="reset"])
 :not([type="submit"])
-:not([arialabelledby],[id]),
+:not([aria-labelledby],[id]),
 textarea:not([aria-labelledby],[id])
 label:not([for]) {
     outline: var(--lint);

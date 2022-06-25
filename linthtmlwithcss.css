@@ -185,7 +185,7 @@ svg:is([role="presentation"], [aria-label], [aria-labelledby], [aria-hidden="tru
 /* By Adam Argyle */
 
 [dir="rtl"]:not([lang="ar"], [lang="he"]),
-:is([lang="ar"], [lang="he"]):noet([dir="rtl"]),
+:is([lang="ar"], [lang="he"]):not([dir="rtl"]),
 :is([lang="ar"], [lang="he"]) [lang]:not([dir="ltr"]) {
     outline: var(--lint);
     content: "Mismatched [dir] && [lang]";

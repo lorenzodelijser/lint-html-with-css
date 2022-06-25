@@ -55,7 +55,7 @@ img:not([alt]) {
 /* This selector hunts for lists that have something other than an <li> inside */
 /* By Adam Argyle */
 
-:is(ul, ol) *:not(li) {
+:is(ul, ol) > :not(li) {
     outline: var(--lint);
     content: "This selector hunts for lists that have something other than an <li> inside";
 }

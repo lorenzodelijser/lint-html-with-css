@@ -194,7 +194,7 @@ svg:not([role="presentation"]):not([aria-label]):not([aria-labelledby]) > :first
 }
 
 
-/* Unsecure [target=blank] */
+/* Insecure [target=blank] */
 /* By Adam Argyle */
 
 [target$="blank"]:not(
@@ -203,7 +203,7 @@ svg:not([role="presentation"]):not([aria-label]):not([aria-labelledby]) > :first
     [rel*="noreferrer"]
 ) {
     outline: var(--lint);
-    content: "Unsecure [target=blank]";
+    content: "Insecure [target=blank]";
 }
 
 
@@ -286,13 +286,4 @@ img:not([srcset]) {
 :is(button, a):not([aria-label]):not([aria-labelledby]) i:only-child:not([aria-label]):not([aria-labelledby]) {
     outline: var(--lint);
     content: "Empty buttons or links without any kind of labelling";
-}
-
-
-/* Prevent unsecure [target='_blank'] links */
-/* By Victor de la Fouchardière */
-
-a[target='_blank']:not([rel ='noopener']):not([rel='noreferrer']) {
-    outline: var(--lint);
-    content: "Prevent unsecure [target='_blank'] links";
 }
